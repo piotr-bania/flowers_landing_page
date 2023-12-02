@@ -1,0 +1,15 @@
+@import '../globals.scss';
+
+.section_1 {
+    height: 120vh;
+    background: linear-gradient(90deg, #E0EEEE00 55%, #E0EEEE 55%, #E0EEEE 70%, #FFFFFF 70%);
+    z-index: 1;
+
+    .text {
+        padding-top: 40vh;
+        grid-area: 1 / 7 / 2 / 13;
+        display: flex;
+        flex-direction: column;
+        gap: $small;
+    }
+}

@@ -1,0 +1,150 @@
+/* ------------------------------ Fonts ------------------------------ */
+@font-face {
+    font-family: 'Ephesis';
+    src: url(../public/fonts/Ephesis/Ephesis_Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(../public/fonts/Josefin_Sans/Josefin_Sans_Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Josefin Sans Bold';
+    src: url(../public/fonts/Josefin_Sans/Josefin_Sans_Bold.ttf);
+}
+
+$header_font_bold: 'Josefin Sans Bold',
+sans-serif;
+$text_font: 'Josefin Sans',
+sans-serif;
+$logo_font: 'Ephesis',
+sans-serif;
+
+/* ------------------------------ Fluid fonts ------------------------------ */
+$paragraph: clamp(1.13rem, 1.17vw + 0.83rem, 2rem);
+$header_4: clamp(1.41rem, 2.13vw + 0.88rem, 3rem);
+$header_3: clamp(1.76rem, 3.66vw + 0.84rem, 4.5rem);
+$header_2: clamp(2.2rem, 6.07vw + 0.68rem, 6.75rem);
+$header_1: clamp(2.75rem, 9.84vw + 0.29rem, 10.13rem);
+
+/* ------------------------------ Fluid space ------------------------------ */
+$small: clamp(1rem, 0.85rem + 0.75vw, 1.75rem);
+$medium: clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
+$large: clamp(3rem, 2.55rem + 2.25vw, 5.25rem);
+
+/* ------------------------------ Variables ------------------------------ */
+$heading: #000000;
+$text: #4D4F4E;
+$white: #FFFFFF;
+
+/* ------------------------------ Basics ------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    list-style-type: none;
+}
+
+body {
+    width: 100%;
+    height: 4170px;
+    background: $white;
+    background: linear-gradient(90deg, #FFFFFF 0%, #E0EEEE 50%);
+    // background: url('/images/ref.jpg');
+    background-size: cover;
+    font-family: $text_font;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.hero_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4170px;
+    z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $header_font_bold;
+    color: $heading;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: $header_1;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: $header_2;
+}
+
+h3 {
+    font-size: $header_3;
+}
+
+h4 {
+    font-size: $header_4;
+}
+
+p {
+    font-family: $text_font;
+    font-size: $paragraph;
+    color: $text;
+}
+
+button {
+    font-family: $text_font;
+    font-size: calc($paragraph * .65);
+    background: $white;
+    color: $heading;
+    width: max-content;
+    height: max-content;
+    padding: calc($small * .75) calc($small * 1.5);
+    border: none;
+    border-radius: calc($small * .2);
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+img {
+    width: 50px;
+    padding: 15px;
+    border-radius: calc($small * .2);
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    background: $white;
+    cursor: pointer;
+}
+
+/* ------------------------------ Sections ------------------------------ */
+section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: $small;
+    padding: calc($large * .5) calc($large * 2);
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: repeat(8, 1fr);
+        padding: calc($medium * .5) calc($medium * 2);
+    }
+
+    @media screen and (max-width: 767px) {
+        grid-template-columns: repeat(4, 1fr);
+        padding: calc($small * .5) calc($small * 2);
+    }
+}

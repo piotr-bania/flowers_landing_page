@@ -1,0 +1,44 @@
+@import '../../globals.scss';
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    .logo {
+        grid-area: 1 / 1 / 2 / 3;
+        font-family: $logo_font;
+        font-size: $header_3;
+        color: $heading;
+        line-height: 1;
+    }
+
+    .links {
+        grid-area: 1 / 7 / 2 / 11;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            font-family: $text_font;
+            font-size: calc($paragraph * .65);
+            color: $text;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: $heading;
+            }
+        }
+    }
+
+    .icons {
+        grid-area: 1 / 11 / 2 / 13;
+        display: flex;
+        gap: $large;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
